@@ -3,12 +3,12 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 
-import scripts.compare_two_images as compare_two_images
+import compare_two_images
 
 cascPath = "haarcascade_frontalface_default.xml"
 face_cascade = cv2.CascadeClassifier(cascPath)
 
-rohit = cv2.imread("justface.png")
+rohit = cv2.imread("../images/justface.png")
 
 if len(sys.argv) < 2:
     video_capture = cv2.VideoCapture(0)
@@ -67,7 +67,7 @@ n, bins, patches = plt.hist(x=data, bins='auto', color='#0504aa',
 plt.grid(axis='y', alpha=0.75)
 plt.xlabel('Value')
 plt.ylabel('Frequency')
-plt.title('My Very Own Histogram')
+plt.title('Pixel difference distribution')
 plt.text(23, 45, r'$\mu=15, b=3$')
 maxfreq = n.max()
 # Set a clean upper y-axis limit.
